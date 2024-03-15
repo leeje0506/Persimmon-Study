@@ -1,6 +1,6 @@
 # Persimmon-Study
 
-![img](./.Readme/image-gam.png)
+![img](./image-gam.png)
 ---
 #  감나무 스터디 📝
 하루하루 성장하는 감나무 스터디입니다.
