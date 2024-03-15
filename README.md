@@ -16,14 +16,12 @@
 6. 다른 사람들의 PR을 보고 자유롭게 코드리뷰를 한다.
 7. ***주의!! 기존 폴더를 지우면 안됩니다!!*** 개인 폴더 내부만 수정해주세요 :)
 8. 어려운 문제 오프라인 코드 리뷰는 미리 요청해서 주말에 합시다.
-
 <br />
 <br />
 
 ## ✅ 소스코드 파일 이름 규칙
 - 자유롭게 작성 
 - 폴더명 또는 소스코드 파일명에 콜론 ":" 안됩니다 :D
-
 <br />
 <br />
 
@@ -41,7 +39,6 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.ne
   * [CFS] - 코드포스
   * [SEA] - 삼성SW Expert Academy
   * [ETC] - 그외
-
 <br />
 <br />
 
@@ -49,7 +46,6 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.ne
 - PR 제목: 이름 / 주차 / 몇 문제
 -  ```jieun lee / 3월 1주차 / 4문제 ```
 -  comment은 템플릿에 따라 작성 :)
-
 <br />
 <br />
 
@@ -62,14 +58,13 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.ne
   -   왜 이렇게 풀었는지 궁금한 부분
   -   또 다른 풀이 방식 제시
 - 코드의 일부분에다 코드리뷰를 해도 되고 전체 코드 밑 or PR 하나 밑에다 코멘트 작성으로 리뷰를 해도 됩니다.
-
 <br />
 <br />
 
 ## ✅ 참여자
 ### 🎉 스터디 달성 🎉
-<table><tr>         <td align="center"><a href="https://github.com/leeje0506"><img src="https://avatars.githubusercontent.com/uu/137889331?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉leeje0506</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/977"/></sub></a><br /></td>
-         <td align="center"><a href="https://github.com/dongheonchoi"><img src="https://avatars.githubusercontent.com/u/124031425?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉dongheonchoi</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/193"/></sub></a><br /></td>
+<table><tr>         <td align="center"><a href="https://github.com/leeje0506"><img src="https://avatars.githubusercontent.com/uu/137889331?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉leeje0506</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/></sub></a><br /></td>
+         <td align="center"><a href="https://github.com/dongheonchoi"><img src="https://avatars.githubusercontent.com/u/124031425?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉dongheonchoi</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/></sub></a><br /></td>
       
 </table><br />
 
