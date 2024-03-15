@@ -62,7 +62,7 @@ git commit -m "[BOJ] Hello World / 브론즈5 / 1분" -m "https://www.acmicpc.ne
 <br />
 
 ## ✅ 참여자
-### 🎉 스터디 달성 🎉
+### 🎉 스터디 참여 🎉
 <table><tr>         <td align="center"><a href="https://github.com/leeje0506"><img src="https://avatars.githubusercontent.com/u/137889331?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉leeje0506</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/></sub></a><br /></td>
          <td align="center"><a href="https://github.com/dongheonchoi"><img src="https://avatars.githubusercontent.com/u/124031425?v=4?s=100" width="100px;" alt=""/>         <br /><sub><b>🎉dongheonchoi</b><br><img src="https://us-central1-progress-markdown.cloudfunctions.net/progress/0"/></sub></a><br /></td>
       
