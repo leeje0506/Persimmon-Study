@@ -1,0 +1,48 @@
+package Week02;
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+
+public class BJ_11286_절댓값힙 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int N = sc.nextInt();
+
+		PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+			@Override
+			public int compare(Integer a, Integer b) {
+				int A = Math.abs(a);
+				int B = Math.abs(b);
+
+				if (A > B)
+					return A - B;
+				else if (A == B) {
+					if (a > b)
+						return 1;
+					else
+						return -1;
+				} else
+					return -1;
+			}
+
+		});
+
+		for (int i = 0; i < N; i++) {
+			int x = sc.nextInt();
+
+			if (x != 0) {
+				pq.add(x);
+			} else if (pq.isEmpty() && x == 0) {
+				System.out.println(0);
+			} else if (!pq.isEmpty() && x == 0) {
+				System.out.println(pq.peek());
+				pq.poll();
+			}
+		}
+
+	}
+
+}
