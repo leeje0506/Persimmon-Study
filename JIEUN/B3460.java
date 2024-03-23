@@ -20,7 +20,7 @@ public class B3460 {
                 }
             }
             System.out.println(sb);
-            sb.setLength(0); // StringBuilder 초기화
+            sb.setLength(0);
         }
 
     }
