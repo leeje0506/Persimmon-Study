@@ -8,7 +8,7 @@ public class B2460 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         //1번역부터 10번 종착역까지.
-        //내린다, 탄다
+        //내린다, 탄다.
         //출력 : 타고 있는 사람의 수가 가장 많을 때의 사람 수.
 
         int total_max =0;
