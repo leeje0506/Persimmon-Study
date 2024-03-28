@@ -30,8 +30,7 @@ public class boj_1946 {
 					a = arr[i];
 				}
 			}
-			sb.append(N-tem).append("\n");
-			
+			sb.append(N-tem).append("\n");		
 		}
 		System.out.println(sb);
 	}
