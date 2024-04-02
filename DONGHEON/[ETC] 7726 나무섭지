@@ -1,0 +1,106 @@
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.StringTokenizer;
+
+
+public class softeer_7726 {
+	static class point{
+		int r;
+		int c;
+		int dis;
+		public point(int r, int c , int dis) {
+			this.r = r;
+			this.c = c;
+			this.dis = dis;
+		}
+	}
+	static int n , m, endR, endC ,startR, startC ,distance ,maxDis;
+	static boolean flag1;
+	static boolean[][] tf;
+	static int[] dirR = { 0, 1, 0, -1};
+	static int[] dirC = { 1, 0, -1, 0};
+	public static void main(String[] args)throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
+		
+		tf = new boolean[n][m];
+		distance =Integer.MAX_VALUE;
+		startR = 0;
+		startC = 0;
+		endR = 0;
+		endC = 0;
+		flag1 = false;
+		
+		List<point> ghost = new ArrayList<>();
+		for(int i = 0; i < n; i++) {
+			String str = br.readLine();
+			for (int j = 0; j < m; j++) {
+				if(str.charAt(j) == '#') {
+					tf[i][j] = true;
+				}else if(str.charAt(j) == 'D') {
+					endR = i;
+					endC = j;
+				}else if(str.charAt(j) == 'N') {
+					startR = i;
+					startC = j;
+				}else if(str.charAt(j) == 'G') {
+					ghost.add(new point(i , j , 0));
+				}
+			}
+		}
+		if(ghost.size() != 0) {
+			ghost.sort((o1, o2)-> (Math.abs(endR-o1.r) +  Math.abs(endC-o1.c)) - Math.abs(endR-o2.r) +  Math.abs(endC-o2.c));
+			maxDis = Math.abs(endR-ghost.get(0).r) +  Math.abs(endC-ghost.get(0).c);			
+		}else {
+			maxDis = Integer.MAX_VALUE;
+		}
+		
+		
+		bfs(startR , startC , 0);
+		
+		if(flag1){
+			System.out.println("Yes");
+		}else {
+			System.out.println("No");
+		}
+		
+	}
+
+	private static void bfs(int row, int col ,int dis) {
+		
+		Queue<point> que = new LinkedList<point>();
+		que.add(new point(row, col, 0));
+		
+		while(!que.isEmpty()) {
+			point tem = que.poll();
+			
+			for(int i = 0; i < 4; i++) {
+				int nr = tem.r + dirR[i];
+				int nc = tem.c+ dirC[i];
+				if(nr >= 0 && nr < n && nc >= 0 && nc < m && !tf[nr][nc] && tem.dis < maxDis -1) {
+					if(nr == endR && nc == endC) {
+						flag1 = true;
+						return;
+					}
+					tf[nr][nc] =true;
+					que.add(new point(nr, nc, tem.dis+1));
+				}
+			}
+			
+		}
+		
+
+		
+	}
+
+}
