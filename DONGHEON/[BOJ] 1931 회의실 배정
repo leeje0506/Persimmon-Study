@@ -1,0 +1,53 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
+
+public class boj_1931 {
+	
+	static class meeting implements Comparable<meeting>{
+		int start;
+		int end;
+		public meeting(int start, int end) {
+			this.start = start;
+			this.end = end;
+		}
+		@Override
+		public int compareTo(meeting o) {
+			
+			if(this.end == o.end) {
+				return this.start - o.start;
+			}else {
+				return this.end - o.end;					
+			}
+						
+		}
+		
+	}
+	
+	public static void main(String[] args)throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		PriorityQueue<meeting> pq = new PriorityQueue<>();
+		
+		int N = Integer.parseInt(br.readLine());
+		
+		for(int i = 0; i < N; i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine());
+			pq.add(new meeting(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+		}
+		
+		int res = 0;
+		int endtime = -1;
+		while(!pq.isEmpty()){
+			meeting tem = pq.poll();
+			if(tem.start >= endtime) {
+				endtime = tem.end;
+				res++;
+			}
+		}
+		System.out.println(res);
+	}
+
+}
