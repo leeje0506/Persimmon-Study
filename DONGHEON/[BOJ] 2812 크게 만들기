@@ -1,0 +1,66 @@
+package BOJ;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+import java.util.Stack;
+import java.util.StringTokenizer;
+
+public class boj_2812 {
+
+	public static void main(String[] args)throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringBuilder sb = new StringBuilder();
+		
+		StringTokenizer st = new StringTokenizer(br.readLine() , " ");
+		
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+		
+		int cnt = 0;
+		
+		Stack<Integer> sta = new Stack<Integer>();
+		
+		String str = br.readLine();
+		
+		int idx = 0;
+		for (int i = 0; i < N; i++) {
+			int tem = str.charAt(i)-48;
+			
+			while(!sta.isEmpty() && cnt < K) {
+				if(tem > sta.peek()) {
+					sta.pop();
+					cnt++;
+				}else {
+					break;
+				}
+			}
+			
+			sta.add(tem);
+			if (cnt == K) {
+				idx = i+1;
+				break;
+			}
+		}
+		if(cnt < K) {
+			while(cnt < K) {
+				sta.pop();
+				cnt++;
+			}
+			while(!sta.isEmpty()) {
+				sb.insert(0 , sta.pop());
+			}
+		}else {
+			while(!sta.isEmpty()) {
+				sb.insert(0 , sta.pop());
+			}
+			sb.append(str.substring(idx, N));
+		}
+
+		System.out.println(sb);
+				
+	}
+
+}
