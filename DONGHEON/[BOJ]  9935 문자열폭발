@@ -1,0 +1,125 @@
+package BOJ;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class boj_9935v1 {
+
+public static void main(String[] args)throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		String str1 = br.readLine();
+		
+		String str2 = br.readLine();
+		
+		Stack<Character> sta = new Stack<Character>();
+		
+		int len = str2.length()-1;
+		Character cha = str2.charAt(len);
+		
+		for(int i = 0; i < str1.length(); i++) {
+			Character tem = str1.charAt(i);
+			sta.add(tem);
+			if(tem == cha) {
+				Stack<Character> ts = new Stack<Character>();
+				flag:
+				for (int j = len; j >=0 ; j--) {
+					if(!sta.isEmpty()) {
+						char tc = sta.pop();
+						ts.add(tc);
+						if(tc != str2.charAt(j)) {
+							while (!ts.isEmpty()) {
+								sta.add(ts.pop());
+							}
+							break flag;
+						}
+					}else {
+						while (!ts.isEmpty()) {
+							sta.add(ts.pop());
+						}
+						break flag;
+					}
+				}
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		
+		for(Character c : sta) {
+			sb.append(c);
+		}
+		if(sb.length() == 0) {
+			System.out.println("FRULA");
+		}else {			
+			System.out.println(sb);
+		}
+		
+	}
+
+}
+
+
+///////////////////////////////////////////////////////////////////////////v2
+
+
+package BOJ;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class boj_9935v2 {
+
+	public static void main(String[] args)throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		String str1 = br.readLine();
+		
+		String str2 = br.readLine();
+		
+		Stack<Character> sta = new Stack<Character>();
+		
+		int len = str2.length();
+		Character cha = str2.charAt(len-1);
+		
+		for(int i = 0; i < str1.length(); i++) {
+			Character tem = str1.charAt(i);
+			sta.add(tem);
+			if(tem == cha && sta.size() >= len) {
+				boolean flag = false;
+				for(int j = 0; j < len; j++) {
+					if(sta.get(sta.size()-len + j) != str2.charAt(j)) {
+						flag = true;
+						break;
+					}
+				}
+				if(!flag) {
+					for(int j = 0; j < len; j++) {
+						sta.pop();
+					}
+				}
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		
+		for(Character c : sta) {
+			sb.append(c);
+		}
+		if(sb.length() == 0) {
+			System.out.println("FRULA");
+		}else {			
+			System.out.println(sb);
+		}
+		
+	}
+
+}
+
