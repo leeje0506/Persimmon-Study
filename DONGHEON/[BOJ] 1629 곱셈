@@ -1,0 +1,42 @@
+package BOJ;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class boj_1629 {
+	static long res , A , B , C;
+	public static void main(String[] args)throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		StringTokenizer st = new StringTokenizer(br.readLine() , " ");
+		
+		A = Long.parseLong(st.nextToken());
+		B = Long.parseLong(st.nextToken());
+		C = Long.parseLong(st.nextToken());
+
+		res = 1;
+		dfs(B);
+		System.out.println(res);
+	}
+	private static void dfs(long num) {
+		if(num == 0) {
+			return;
+		}
+		
+		if(num%2 == 1) {
+			fn();
+		}
+		fn2(A);
+		dfs(num/2);	
+	}
+	private static void fn() {
+		res = (res*A)%C;
+	}
+
+	private static void fn2(long res2) {
+		A = (A*A)%C;
+	}
+
+}
