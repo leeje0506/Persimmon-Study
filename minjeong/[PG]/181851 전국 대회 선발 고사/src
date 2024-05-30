@@ -1,0 +1,19 @@
+import java.util.*;
+
+class Solution {
+    public int solution(int[] rank, boolean[] attendance) {
+        TreeMap<Integer, Integer> map = new TreeMap<Integer, Integer>();
+        
+        for(int i = 0; i < rank.length; i++){
+            if(!attendance[i]) continue;
+            
+            map.put(rank[i], i);
+        }
+        
+        int answer = map.firstEntry().getValue() * 10000 + 
+            map.higherEntry(map.firstEntry().getKey()).getValue() * 100 + 
+                            map.higherEntry(map.higherEntry(map.firstEntry().getKey()).getKey()).getValue();
+        
+        return answer;
+    }
+}
