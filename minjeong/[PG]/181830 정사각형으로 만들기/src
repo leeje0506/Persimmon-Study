@@ -1,0 +1,40 @@
+class Solution {
+    public int[][] solution(int[][] arr) {
+
+        int[][] answer = arr;
+        
+        int rlen = arr.length;
+        int clen = arr[0].length;
+        
+        if(rlen > clen){    
+            answer = new int[rlen][rlen];
+            
+            for(int r = 0; r < arr.length; r++){
+                for(int c = 0; c < clen; c++){
+                    answer[r][c] = arr[r][c];
+                }
+                    
+                for(int c = clen ; c < rlen; c++){
+                    answer[r][c] = 0;
+                }
+            }
+        }
+        
+        if(rlen < clen){
+            answer = new int[clen][clen];
+            
+            for(int c = 0; c < clen; c++){
+                for(int r = 0; r < rlen; r++){
+                    answer[r][c] = arr[r][c];
+                }
+                
+                for(int r = rlen; r < clen; r++){
+                    answer[r][c] = 0;
+                }
+            }
+        }
+        
+        
+        return answer;
+    }
+}
