@@ -1,0 +1,34 @@
+class Solution {
+    static int[] dr = {0, 1, 1, 1, 0, -1, -1, -1};
+    static int[] dc = {1, 1, 0, -1, -1, -1, 0, 1};
+    static int answer;
+    
+    public int solution(int[][] board) {
+        int N = board.length;
+        answer = N*N;
+        
+        for(int r = 0; r < N; r++){
+            for(int c = 0; c < N; c++){
+                if(board[r][c] == 1){
+                    answer--;
+                    change(board, r, c, N);
+                }    
+            }
+        }
+        
+        return answer;
+    }
+    
+    public void change(int[][] board, int r, int c, int N){
+        for(int d = 0; d < 8; d++){
+            int nr = r + dr[d];
+            int nc = c + dc[d];
+            
+            if(nr >= 0 && nr < N && nc >= 0 && nc < N && board[nr][nc] == 0) {
+                board[nr][nc] = 2;
+                answer--;
+            } else 
+                continue;
+        }
+    }
+}
